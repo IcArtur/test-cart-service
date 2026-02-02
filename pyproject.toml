@@ -1,7 +1,7 @@
 [tool.ruff]
 line-length = 140
 target-version = "py311"
-extend-exclude = ["migrations", "venv"]
+extend-exclude = ["migrations", "venv", "config", "manage.py"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
