@@ -9,6 +9,9 @@ up:
 test:
 	$(TEST_SCRIPT)
 
+coverage:
+	$(COMPOSE) run --rm $(SERVICE) python -m pytest --cov=orders --cov-report=term-missing
+
 down:
 	$(COMPOSE) down
 
