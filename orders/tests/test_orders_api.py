@@ -43,9 +43,11 @@ def test_create_order_returns_totals_and_items(client):
 
     p1_net = money(p1.unit_price_net * 2)
     p1_vat = money(p1_net * p1.vat_rate)
+    p1_gross = money(p1_net + p1_vat)
 
     p2_net = money(p2.unit_price_net * 1)
     p2_vat = money(p2_net * p2.vat_rate)
+    p2_gross = money(p2_net + p2_vat)
 
     total_net = money(p1_net + p2_net)
     total_vat = money(p1_vat + p2_vat)
@@ -61,8 +63,18 @@ def test_create_order_returns_totals_and_items(client):
     assert Decimal(data["total_vat"]) == total_vat
     assert len(data["items"]) == 2
 
-    skus = {i["product_sku"] for i in data["items"]}
-    assert skus == {"TEST-BOOK-001", "TEST-ELEC-001"}
+    by_sku = {i["product_sku"]: i for i in data["items"]}
+    assert set(by_sku.keys()) == {"TEST-BOOK-001", "TEST-ELEC-001"}
+
+    book = by_sku["TEST-BOOK-001"]
+    assert Decimal(book["line_price_net"]) == p1_net
+    assert Decimal(book["line_vat"]) == p1_vat
+    assert Decimal(book["line_price_gross"]) == p1_gross
+
+    cable = by_sku["TEST-ELEC-001"]
+    assert Decimal(cable["line_price_net"]) == p2_net
+    assert Decimal(cable["line_vat"]) == p2_vat
+    assert Decimal(cable["line_price_gross"]) == p2_gross
 
 
 @pytest.mark.django_db
