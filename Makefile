@@ -42,6 +42,9 @@ makemigrations:
 migrate:
 	$(COMPOSE) run --rm $(SERVICE) python manage.py migrate
 
+load_fixtures:
+	$(COMPOSE) run --rm $(SERVICE) python manage.py loaddata products
+
 resetdb:
 	$(COMPOSE) down -v
 	$(COMPOSE) up -d db
@@ -69,3 +72,5 @@ format: ruff-format
 fmt: ruff-format
 
 ci: ruff-format ruff-check migrate test
+
+setup: migrate load_fixtures

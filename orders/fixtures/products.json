@@ -1,0 +1,67 @@
+[
+  {
+    "model": "orders.product",
+    "pk": "3b4b6e4f-0d3b-4f34-9b2d-0c1f0d6b6e01",
+    "fields": {
+      "sku": "BOOK-001",
+      "name": "Paperback Book",
+      "unit_price_net": "12.90",
+      "vat_rate": "0.0400",
+      "active": true,
+      "created_at": "2026-02-02T00:00:00Z",
+      "updated_at": "2026-02-02T00:00:00Z"
+    }
+  },
+  {
+    "model": "orders.product",
+    "pk": "b65b1d0a-8d2f-4d3f-8f4a-9c2e2a8c1f10",
+    "fields": {
+      "sku": "FOOD-001",
+      "name": "Pack of Pasta",
+      "unit_price_net": "2.40",
+      "vat_rate": "0.1000",
+      "active": true,
+      "created_at": "2026-02-02T00:00:00Z",
+      "updated_at": "2026-02-02T00:00:00Z"
+    }
+  },
+  {
+    "model": "orders.product",
+    "pk": "8c7b1e72-7e4d-4c2b-9a2a-4a5f4e4d2c12",
+    "fields": {
+      "sku": "ELEC-001",
+      "name": "USB-C Cable",
+      "unit_price_net": "8.50",
+      "vat_rate": "0.2200",
+      "active": true,
+      "created_at": "2026-02-02T00:00:00Z",
+      "updated_at": "2026-02-02T00:00:00Z"
+    }
+  },
+  {
+    "model": "orders.product",
+    "pk": "1d2c3b4a-5e6f-4a3b-9c8d-7e6f5a4b3c21",
+    "fields": {
+      "sku": "HOME-001",
+      "name": "Dish Soap",
+      "unit_price_net": "3.10",
+      "vat_rate": "0.2200",
+      "active": true,
+      "created_at": "2026-02-02T00:00:00Z",
+      "updated_at": "2026-02-02T00:00:00Z"
+    }
+  },
+  {
+    "model": "orders.product",
+    "pk": "f10e9d8c-7b6a-4c3d-9e8f-7a6b5c4d3e22",
+    "fields": {
+      "sku": "BABY-001",
+      "name": "Baby Wipes",
+      "unit_price_net": "4.80",
+      "vat_rate": "0.2200",
+      "active": true,
+      "created_at": "2026-02-02T00:00:00Z",
+      "updated_at": "2026-02-02T00:00:00Z"
+    }
+  }
+]
